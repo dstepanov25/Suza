@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="suzadb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SUZA-SERVER;Initial Catalog=suzadb;Integrated Security=True;Current Language=British" SettingsObjectName="FindImages.Properties.Settings" SettingsPropertyName="suzadbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ProductsColors" Member="ProductsColors">
+    <Type Name="ProductsColors">
+      <Column Name="ColorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ColorName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Association Name="ProductsColors_Product" Member="Products" ThisKey="ColorId" OtherKey="ColorId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prices" Member="Prices">
+    <Type Name="Price">
+      <Column Name="PriceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PriceListID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriceListWorksheetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriceListProductName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="InputPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDinPriceList" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Garanty" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Availability" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isConst" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Product_Price" Member="Product" ThisKey="ProductID" OtherKey="ProductID" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product" Id="ID1">
+      <Column Name="ProductID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SiteProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductFullName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="ManufacturerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Summary" Type="System.String" DbType="NVarChar(800) NOT NULL" CanBeNull="false" />
+      <Column Name="Keywords" Type="System.String" DbType="NVarChar(800) NOT NULL" CanBeNull="false" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(800) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Category2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isChanged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isPriceChanged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isCategoryChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="icecatid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isNameChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BestPrice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Summary2" Type="System.String" DbType="NVarChar(800)" CanBeNull="true" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ColorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VideoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Product_Price" Member="Prices" ThisKey="ProductID" OtherKey="ProductID" Type="Price" />
+      <Association Name="ProductsColors_Product" Member="ProductsColors" ThisKey="ColorId" OtherKey="ColorId" Type="ProductsColors" IsForeignKey="true" />
+      <Association Name="Category_Product" Member="Category" ThisKey="Category2" OtherKey="Id" Type="Category" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Product" Member="Products" ThisKey="Id" OtherKey="Category2" Type="Product" />
+      <Association Name="Category_Category" Member="Categories" ThisKey="Id" OtherKey="ParentId" Type="Category" />
+      <Association Name="Category_OutputPriceListCategory" Member="OutputPriceListCategories" ThisKey="Id" OtherKey="CategoryID" Type="OutputPriceListCategory" />
+      <Association Name="Category_Category" Member="Category1" ThisKey="ParentId" OtherKey="Id" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OutputPriceListCategories" Member="OutputPriceListCategories">
+    <Type Name="OutputPriceListCategory">
+      <Column Name="OutputPriceListCategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OutputPriceListID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Markup" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Association Name="Category_OutputPriceListCategory" Member="Category" ThisKey="CategoryID" OtherKey="Id" Type="Category" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="OutputPriceList_OutputPriceListCategory" Member="OutputPriceList" ThisKey="OutputPriceListID" OtherKey="OutputPriceId" Type="OutputPriceList" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OutputPriceList" Member="OutputPriceLists">
+    <Type Name="OutputPriceList">
+      <Column Name="OutputPriceId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CatalogName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeneratingShedule" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="OutputPriceList_OutputPriceListCategory" Member="OutputPriceListCategories" ThisKey="OutputPriceId" OtherKey="OutputPriceListID" Type="OutputPriceListCategory" />
+      <Association Name="Sites_OutputPriceList" Member="Sites" ThisKey="SiteId" OtherKey="SiteId" Type="Sites" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BannedImagesSites" Member="BannedImagesSites">
+    <Type Name="BannedImagesSite">
+      <Column Name="BannedHost" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductsVideos" Member="ProductsVideos">
+    <Type Name="ProductsVideo">
+      <Column Name="VideoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VideoChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BannedImages" Member="BannedImages">
+    <Type Name="BannedImage">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BannedImage" Member="BannedImage1" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductsImages" Member="ProductsImages">
+    <Type Name="ProductsImage">
+      <Column Name="ImageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ImageChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImageHost" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="WhoConfirm" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Settings" Member="Settings">
+    <Type Name="Settings">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SettingName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SettingValue" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sites" Member="Sites">
+    <Type Name="Sites">
+      <Column Name="SiteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteURL" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FTPPath" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FTPServer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FTPUsername" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FTPPass" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ImagesPath" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ResizeImages" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SmallBigSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MedBigSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Sites_OutputPriceList" Member="OutputPriceList" ThisKey="SiteId" OtherKey="SiteId" Type="OutputPriceList" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetProductWithOutImage" Method="GetProductWithOutImage" IsComposable="true">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.SetProductImage" Method="SetProductImage">
+    <Parameter Name="SiteProductId" Parameter="siteProductId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ImageId" Parameter="imageId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetProductWithOutYoutube" Method="GetProductWithOutYoutube" IsComposable="true">
+    <ElementType IdRef="ID1" />
+  </Function>
+</Database>

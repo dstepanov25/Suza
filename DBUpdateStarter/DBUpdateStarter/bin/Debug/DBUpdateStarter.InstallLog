@@ -1,0 +1,13 @@
+﻿Выполняется установка сборки 'c:\Documents and Settings\Dmitry\Мои документы\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Documents and Settings\Dmitry\Мои документы\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.InstallLog
+   assemblypath = c:\Documents and Settings\Dmitry\Мои документы\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe
+Устанавливается служба DBUpdateStarter...
+Служба DBUpdateStarter успешно установлена.
+Создается исходный EventLog DBUpdateStarter в журнале Application...
+Выполняется фиксация сборки 'c:\Documents and Settings\Dmitry\Мои документы\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Documents and Settings\Dmitry\Мои документы\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.InstallLog
+   assemblypath = c:\Documents and Settings\Dmitry\Мои документы\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe

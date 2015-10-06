@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="suzadb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SUZA-SERVER;Initial Catalog=suzadb;Integrated Security=True;Connect Timeout=120;Current Language=British" SettingsObjectName="DBUpdateStarter.Properties.Settings" SettingsPropertyName="suzadbConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PriceLists" Member="PriceLists">
+    <Type Name="PriceLists">
+      <Column Name="PriceListID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PriceListName" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriceListFileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PriceListAltFileName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PriceListExtension" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DaysToDelivery" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Confidence" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MailFrom" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MailSubject" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateFromMail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PriceURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaxDaysForUpdate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeneratingShedule" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateMode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

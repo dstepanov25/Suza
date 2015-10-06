@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings>
+<ConnectionString>Language=British;Data Source=SUZA-SERVER;Initial Catalog=suzadb;Integrated Security=True</ConnectionString>
+<DirWithPrices>H:\inetpub\wwwroot\SuzaStore\PriceLists\</DirWithPrices>
+<DirWithOldPrices>H:\inetpub\wwwroot\SuzaStore\OldPriceLists\</DirWithOldPrices>
+<ProductsImages>G:\SuzaImages\</ProductsImages>
+<TemplatesPath>H:\inetpub\wwwroot\SuzaStore\temp\Archive\</TemplatesPath>
+</Settings>

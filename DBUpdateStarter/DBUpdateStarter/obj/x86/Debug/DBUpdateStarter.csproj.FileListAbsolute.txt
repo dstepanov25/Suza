@@ -1,0 +1,18 @@
+c:\documents and settings\dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe.config
+c:\documents and settings\dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe
+c:\documents and settings\dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.pdb
+c:\documents and settings\dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\DBUpdateStarter.exe
+c:\documents and settings\dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\DBUpdateStarter.pdb
+C:\Documents and Settings\Dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\DBUpdateStarter.ProjectInstaller.resources
+C:\Documents and Settings\Dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Dmitry\мои документы\visual studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe.config
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.exe
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\bin\Debug\DBUpdateStarter.pdb
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\DBUpdateStarter.ProjectInstaller.resources
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\DBUpdateStarter.exe
+H:\Users\Stepsus\Documents\Visual Studio 2010\Projects\DBUpdateStarter\DBUpdateStarter\obj\x86\Debug\DBUpdateStarter.pdb
